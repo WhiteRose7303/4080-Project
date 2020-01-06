@@ -15,7 +15,7 @@ def home():
         title='Home Page',
         year=datetime.now().year,
     )
-
+#add
 @app.route('/contact')
 def contact():
     """Renders the contact page."""
