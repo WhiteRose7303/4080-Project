@@ -35,3 +35,12 @@ def about():
         year=datetime.now().year,
         message='Your application description page.'
     )
+
+@app.route('/Photoalbum')
+def Photoalbum():
+    """Renders the contact page."""
+    return render_template(
+        'Photoalbum.html',
+        title='Photoalbum',
+        year=datetime.now().year,
+    )
