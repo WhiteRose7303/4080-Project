@@ -44,3 +44,12 @@ def Photoalbum():
         title='Photoalbum',
         year=datetime.now().year,
     )
+
+@app.route('/Privacy')
+def Privacy():
+    """Renders the contact page."""
+    return render_template(
+        'Privacy.html',
+        title='Privacy',
+        year=datetime.now().year,
+    )
