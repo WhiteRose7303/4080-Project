@@ -5,6 +5,19 @@ Routes and views for the flask application.
 from datetime import datetime
 from flask import render_template
 from _4080_Project import app
+from flask_wtf import FlaskForm 
+from wtforms import StringField, SubmitField 
+from wtforms.validators import DataRequired
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+
+app.config['SECRET_KEY'] = 'The first argument to the field'
+
+
+
 
 @app.route('/')
 @app.route('/home')
@@ -53,4 +66,29 @@ def Privacy():
         title='Privacy',
         year=datetime.now().year,
     )
+
+class QueryFormStructure(FlaskForm):
+    name = StringField('Country Name?)' , validators = [DataRequired()])
+    submit = SubmitField('Submit')
+
+@app.route('/qurey' , methods = ['GET' , 'POST'])
+def qurey():
+    print("running from qurey()")
+    name = ''
+    capital = ''
+    form = QueryFormStructure()
+    df = pd.read_csv('capitals.csv')
+    df = df.set_index('Country')
+    if form.validate_on_submit():
+        name = form.name.data
+        if name in df.index:
+            capital = df.loc[name , 'Capital']
+        else:
+            capital = name + ', no such country'
+        form.name.data = ''
+    return render_template('qurey.html' , form=form, name = capital,
+                           raw_data_table=df.to_html(classes = 'table table-hover'))
+
+
+
 
