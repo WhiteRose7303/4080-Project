@@ -39,11 +39,12 @@
     <Folder Include="_4080_Project\static\" />
     <Folder Include="_4080_Project\static\content\" />
     <Folder Include="_4080_Project\static\fonts\" />
+    <Folder Include="_4080_Project\static\Data\" />
     <Folder Include="_4080_Project\static\scripts\" />
     <Folder Include="_4080_Project\templates\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="capitals.csv" />
+    <Content Include="_4080_Project\static\Data\Capitals.csv" />
     <Content Include="requirements.txt" />
     <Content Include="_4080_Project\static\content\bootstrap.css" />
     <Content Include="_4080_Project\static\content\bootstrap.min.css" />
