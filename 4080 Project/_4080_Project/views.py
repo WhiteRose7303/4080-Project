@@ -8,8 +8,7 @@ from flask import request
 from flask import redirect
 from flask import make_response
 from _4080_Project import app
-
-import pandas as pd
+from pandas import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
