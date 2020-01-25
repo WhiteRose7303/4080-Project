@@ -1,5 +1,6 @@
 Flask<1
 flask-wtf
+flask_wtf
 wtforms
 wtforms.validators
 Flask-Bootstrap
