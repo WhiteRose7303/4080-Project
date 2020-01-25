@@ -5,3 +5,4 @@ wtforms
 wtforms.validators
 Flask-Bootstrap
 pandas
+conda
