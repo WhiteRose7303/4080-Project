@@ -1,7 +1,3 @@
-"""
-Routes and views for the flask application.
-"""
-
 from datetime import datetime
 from flask import render_template
 from flask import request
@@ -19,9 +15,8 @@ from datetime import datetime
 from flask import render_template
 from _4080_Project import app
 
-
-from datetime import datetime
 from flask import render_template, redirect, request
+
 
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
@@ -30,7 +25,7 @@ from wtforms.validators import DataRequired
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-#check
+
 import json 
 import requests
 
@@ -42,13 +37,22 @@ import base64
 
 from os import path
 
+
 from flask   import Flask, render_template, flash, request
 from wtforms import Form, BooleanField, StringField, PasswordField, validators
 from wtforms import TextField, TextAreaField, SubmitField, SelectField, DateField
 from wtforms import ValidationError
 
 
+
+from _4080_Project.Models.QueryFormStructure import QueryFormStructure 
+
+from _4080_Project.Models.QueryFormStructure import LoginFormStructure 
+from _4080_Project.Models.QueryFormStructure import UserRegistrationFormStructure 
+from _4080_Project.Models.LocalDatabaseRoutines import create_LocalDatabaseServiceRoutines
+
 app.config['SECRET_KEY'] = 'The first argument to the field'
+db_Functions = create_LocalDatabaseServiceRoutines() 
 
 
 @app.route('/')
@@ -99,6 +103,8 @@ def Privacy():
         year=datetime.now().year,
     )
 
+
+#query page shit
 class QueryFormStructure(FlaskForm):
     name = StringField('Country Name?' , validators = [DataRequired()])
     submit = SubmitField('Submit')
@@ -130,6 +136,57 @@ def qurey():
                            year=datetime.now().year,
                            message='query input'
                            )
+
+
+# -------------------------------------------------------
+# Register new user page
+# -------------------------------------------------------
+@app.route('/register', methods=['GET', 'POST'])
+def Register():
+    form = UserRegistrationFormStructure(request.form)
+
+    if (request.method == 'POST' and form.validate()):
+        if (not db_Functions.IsUserExist(form.username.data)):
+            db_Functions.AddNewUser(form)
+            db_table = ""
+
+            flash('Thanks for registering new user - '+ form.FirstName.data + " " + form.LastName.data )
+            # Here you should put what to do (or were to go) if registration was good
+        else:
+            flash('Error: User with this Username already exist ! - '+ form.username.data)
+            form = UserRegistrationFormStructure(request.form)
+
+    return render_template(
+        'register.html', 
+        form=form, 
+        title='Register New User',
+        year=datetime.now().year,
+        repository_name='Pandas',
+        )
+
+# -------------------------------------------------------
+# Login page
+# This page is the filter before the data analysis
+# -------------------------------------------------------
+@app.route('/login', methods=['GET', 'POST'])
+def Login():
+    form = LoginFormStructure(request.form)
+
+    if (request.method == 'POST' and form.validate()):
+        if (db_Functions.IsLoginGood(form.username.data, form.password.data)):
+            flash('Login approved!')
+            #return redirect('<were to go if login is good!')
+        else:
+            flash('Error in - Username and/or password')
+   
+    return render_template(
+        'login.html', 
+        form=form, 
+        title='Login to data analysis',
+        year=datetime.now().year,
+        repository_name='Pandas',
+        )
+
 
 
 

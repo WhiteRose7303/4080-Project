@@ -6,3 +6,5 @@ wtforms.validators
 Flask-Bootstrap
 pandas
 conda
+MatPlotLib
+requests
