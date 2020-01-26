@@ -107,7 +107,7 @@ def Privacy():
 
 #query page shit the data is multiplyied by 14 becuase the database is way too long for the site to handle
 class QueryFormStructure(FlaskForm):
-    name = StringField('Airport (In icao)' , validators = [DataRequired()])
+    name = StringField('Airport (In icao) ' , validators = [DataRequired()])
     submit = SubmitField('Enter')
 
 @app.route('/qurey' , methods = ['GET' , 'POST'])
@@ -115,6 +115,7 @@ def qurey():
     print("running from qurey()")
     name = None
     capital = ''
+    #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/databaseM.csv (this is the path)
     df = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\databaseM.csv'))
     a = df['Airport ID'].values
     df = df.set_index('Airport ID')
