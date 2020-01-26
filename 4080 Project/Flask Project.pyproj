@@ -47,11 +47,16 @@
     <Folder Include="_4080_Project\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="_4080_Project\static\Data\All airports in data.csv" />
     <Content Include="_4080_Project\static\Data\Capitals.csv" />
     <Content Include="requirements.txt" />
     <Content Include="_4080_Project\static\content\bootstrap.css" />
     <Content Include="_4080_Project\static\content\bootstrap.min.css" />
     <Content Include="_4080_Project\static\content\site.css" />
+    <Content Include="_4080_Project\static\Data\database.csv" />
+    <Content Include="_4080_Project\static\Data\databaseC.csv" />
+    <Content Include="_4080_Project\static\Data\databaseM.csv" />
+    <Content Include="_4080_Project\static\Data\top.csv" />
     <Content Include="_4080_Project\static\Data\users.csv" />
     <Content Include="_4080_Project\static\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="_4080_Project\static\fonts\glyphicons-halflings-regular.svg" />

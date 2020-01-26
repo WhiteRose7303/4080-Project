@@ -4,9 +4,10 @@ from flask import request
 from flask import redirect
 from flask import make_response
 from _4080_Project import app
-from pandas import pandas as pd
+import pandas as pd
 import matplotlib.pyplot as plt
 import os
+from collections import Counter
 
 import io
 import base64
@@ -104,25 +105,27 @@ def Privacy():
     )
 
 
-#query page shit
+#query page shit the data is multiplyied by 14 becuase the database is way too long for the site to handle
 class QueryFormStructure(FlaskForm):
-    name = StringField('Country Name?' , validators = [DataRequired()])
-    submit = SubmitField('Submit')
+    name = StringField('Airport (In icao)' , validators = [DataRequired()])
+    submit = SubmitField('Enter')
 
 @app.route('/qurey' , methods = ['GET' , 'POST'])
 def qurey():
     print("running from qurey()")
     name = None
     capital = ''
-    df = pd.read_csv(path.join(path.dirname(__file__) , 'static\\Data\\Capitals.csv'))
-    df = df.set_index('Country')
+    df = pd.read_csv(path.join(path.dirname(__file__) , 'static\\Data\\databaseM.csv'))
+    a = df['Airport ID'].values
+    df = df.set_index('Airport ID')
     form = QueryFormStructure(request.form)
     if (request.method == 'POST' ):
         name = form.name.data
         if (name in df.index):
-            capital = df.loc[name,'Capital']
+            capital = list(a).count(name)*14
+            #df.loc[name,'amount']
         else:
-            capital = name+ ', no such country'
+            capital = name+ ', no such Airport'
         form.name.data= ''
 
     raw_data_table = df.to_html(classes = 'table table-hover')

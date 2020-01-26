@@ -61,7 +61,7 @@ class UserRegistrationFormStructure(FlaskForm):
     PhoneNum   = StringField('Phone number:  ' , validators = [DataRequired()])
     EmailAddr  = StringField('E-Mail:  ' , validators = [DataRequired()])
     username   = StringField('User name:  ' , validators = [DataRequired()])
-    password   = PasswordField('Pass word:  ' , validators = [DataRequired()])
+    password   = PasswordField('Password:  ' , validators = [DataRequired()])
     submit = SubmitField('Submit')
 
 ## This class have the fields that the user can set, to have the query parameters for analysing the data
