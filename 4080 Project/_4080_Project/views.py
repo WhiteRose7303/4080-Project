@@ -115,7 +115,7 @@ def qurey():
     print("running from qurey()")
     name = None
     capital = ''
-    df = pd.read_csv(path.join(path.dirname(__file__) , 'static\\Data\\databaseM.csv'))
+    df = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\databaseM.csv'))
     a = df['Airport ID'].values
     df = df.set_index('Airport ID')
     form = QueryFormStructure(request.form)
