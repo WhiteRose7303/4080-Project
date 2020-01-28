@@ -14,6 +14,8 @@ class LocalDatabaseServiceRoutines(object):
         self.index = {}
         #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/users.csv
         self.UsersDataFile = path.join(path.dirname(__file__), '..\\static\\Data\\users.csv')
+        
+
 
 # -------------------------------------------------------
 # Read users data into a dataframe
@@ -21,6 +23,11 @@ class LocalDatabaseServiceRoutines(object):
     def ReadCSVUsersDB(self):
         df = pd.read_csv(self.UsersDataFile)
         return df
+
+    #read alowd
+        def ReadAlowd(self):
+            alowd = pd.read_csv(self.AlowdData)
+            return alowd
 
 # -------------------------------------------------------
 # Saves the DataFrame (input parameter) into the users csv
@@ -48,7 +55,10 @@ class LocalDatabaseServiceRoutines(object):
         df = df[pd.DataFrame(df.username.tolist()).isin(selection).any(1)]
 
         df = df.set_index('password')
+        
         return (Password in df.index.values)
+  
+
      
 # -------------------------------------------------------
 # Add a new user to the DB

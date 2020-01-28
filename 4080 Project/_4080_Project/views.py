@@ -104,6 +104,15 @@ def Privacy():
         year=datetime.now().year,
     )
 
+@app.route('/Alowd')
+def Alowd():
+    """Renders the alowd page."""
+    return render_template(
+        'Alowd.html',
+        title='Dash',
+        year=datetime.now().year,
+    )
+
 
 #query page shit the data is multiplyied by 14 becuase the database is way too long for the site to handle
 class QueryFormStructure(FlaskForm):
@@ -128,9 +137,7 @@ def qurey():
         else:
             capital = name+ ', no such Airport'
         form.name.data= ''
-
     raw_data_table = df.to_html(classes = 'table table-hover')
-
 
     return render_template('qurey.html',
                            form= form,
@@ -141,6 +148,9 @@ def qurey():
                            message='query input'
                            )
 
+    
+
+    
 
 # -------------------------------------------------------
 # Register new user page
@@ -179,7 +189,7 @@ def Login():
     if (request.method == 'POST' and form.validate()):
         if (db_Functions.IsLoginGood(form.username.data, form.password.data)):
             flash('Login approved!')
-            #return redirect('<were to go if login is good!')
+            #return redirect(Alowd())
         else:
             flash('Error in - Username and/or password')
    
