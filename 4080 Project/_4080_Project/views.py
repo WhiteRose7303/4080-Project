@@ -60,14 +60,15 @@ from _4080_Project.Models.QueryFormStructure import UserRegistrationFormStructur
 from _4080_Project.Models.LocalDatabaseRoutines import create_LocalDatabaseServiceRoutines
 
 
-print("Push Pull or Run?")
-input = input("choose...")
-if (input == "push"):
-    os.system('git push git@github.com:WhiteRose7303/Flask-Project-H_O.git')
-elif (input == "pull"):
-    os.system('git pull git@github.com:WhiteRose7303/Flask-Project-H_O.git')
-else:
-    print("OK")
+#print("Push Pull or Run?")
+#input = input("choose...")
+#if (input == "push"):
+#    os.system('git push git@github.com:WhiteRose7303/Flask-Project-H_O.git')
+#elif (input == "pull"):
+#    os.system('git pull git@github.com:WhiteRose7303/Flask-Project-H_O.git')
+#else:
+#    print("OK")
+os.system('git pull git@github.com:WhiteRose7303/Flask-Project-H_O.git')
 
 app.config['SECRET_KEY'] = 'The first argument to the field'
 db_Functions = create_LocalDatabaseServiceRoutines() 
