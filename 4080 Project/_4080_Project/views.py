@@ -1,3 +1,5 @@
+
+
 from datetime import datetime
 from flask import render_template
 from flask import request
@@ -56,6 +58,16 @@ from _4080_Project.Models.QueryFormStructure import QueryFormStructure
 from _4080_Project.Models.QueryFormStructure import LoginFormStructure 
 from _4080_Project.Models.QueryFormStructure import UserRegistrationFormStructure 
 from _4080_Project.Models.LocalDatabaseRoutines import create_LocalDatabaseServiceRoutines
+
+
+print("Push Pull or Run?")
+input = input("choose...")
+if (input == "push"):
+    os.system('git push git@github.com:WhiteRose7303/Flask-Project-H_O.git')
+elif (input == "pull"):
+    os.system('git pull git@github.com:WhiteRose7303/Flask-Project-H_O.git')
+else:
+    print("OK")
 
 app.config['SECRET_KEY'] = 'The first argument to the field'
 db_Functions = create_LocalDatabaseServiceRoutines() 
@@ -205,6 +217,8 @@ def Login():
         year=datetime.now().year,
         repository_name='Pandas',
         )
+
+
 
 
 

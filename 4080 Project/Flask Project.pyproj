@@ -47,6 +47,7 @@
     <Folder Include="_4080_Project\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Test.sh" />
     <Content Include="_4080_Project\static\Data\All airports in data.csv" />
     <Content Include="_4080_Project\static\Data\Capitals.csv" />
     <Content Include="requirements.txt" />
