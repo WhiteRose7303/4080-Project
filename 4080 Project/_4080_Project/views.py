@@ -67,7 +67,7 @@ from _4080_Project.Models.LocalDatabaseRoutines import create_LocalDatabaseServi
 #    os.system('git pull git@github.com:WhiteRose7303/Flask-Project-H_O.git')
 #else:
 #    print("OK")
-os.system('git pull git@github.com:WhiteRose7303/Flask-Project-H_O.git')
+#os.system('git pull git@github.com:WhiteRose7303/Flask-Project-H_O.git')
 
 app.config['SECRET_KEY'] = 'The first argument to the field'
 db_Functions = create_LocalDatabaseServiceRoutines() 
