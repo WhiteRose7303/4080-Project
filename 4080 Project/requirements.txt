@@ -1,10 +1,11 @@
+pandas
 Flask<1
 flask-wtf
 flask_wtf
 wtforms
 wtforms.validators
 Flask-Bootstrap
-pandas
-conda
 MatPlotLib
 requests
+modin
+dask >= 2.7.0
