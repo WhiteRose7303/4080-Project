@@ -5,6 +5,7 @@ from flask import render_template
 from flask import request
 from flask import redirect
 from flask import make_response
+from flask import session, redirect, url_for
 from _4080_Project import app
 
 
@@ -206,7 +207,7 @@ def Login():
     if (request.method == 'POST' and form.validate()):
         if (db_Functions.IsLoginGood(form.username.data, form.password.data)):
             flash('Login approved!')
-            #return redirect(qurey)
+            return redirect(url_for('qurey'))
         else:
             flash('Error in - Username and/or password')
    
