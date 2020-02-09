@@ -121,19 +121,31 @@ def Privacy():
         title='Privacy',
         year=datetime.now().year,
     )
-
-@app.route('/Alowd')
-def Alowd():
-    """Renders the alowd page."""
+#renders Data
+@app.route('/Data')
+def Data():
+   # df = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\FleetData.csv'))
+   # dd = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\database.csv'))
+   # TOP10 = ['KDEN', 'KDFW', 'KORD', 'KJFK', 'KMEM', 'KSMF', 'KSLC', 'KMCO', 'KLGA', 'KPHL']
+   # size = [358644 , 318648 , 261558 , 216942 , 187044 , 172062 , 152790 , 141372 , 135894 , 134970]
+    #fig = plt.figure()
+    #ax = fig.add_axes([0,0,1,1])
+    #ax.bar(TOP10,size)
+    #a = plt.fig_to_html()
+    """Renders the Data page."""
+      #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/databaseM.csv (this is the path)
+     
     return render_template(
-        'Alowd.html',
-        title='Dash',
+        'Data.html',
+        title='Data:',
         year=datetime.now().year,
+        
+
     )
 
 
 #query page shit the data is multiplyied by 14 becuase the database is way too long for the site to handle
-class QueryFormStructure(FlaskForm):
+class QueryFormStructureAIR(FlaskForm):
     name = StringField('Airport (In icao) ' , validators = [DataRequired()])
     submit = SubmitField('Enter')
 
@@ -146,7 +158,7 @@ def qurey():
     df = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\databaseM.csv'))
     a = df['Airport ID'].values
     df = df.set_index('Airport ID')
-    form = QueryFormStructure(request.form)
+    form = QueryFormStructureAIR(request.form)
     if (request.method == 'POST' ):
         name = form.name.data
         if (name in df.index):
@@ -207,7 +219,7 @@ def Login():
     if (request.method == 'POST' and form.validate()):
         if (db_Functions.IsLoginGood(form.username.data, form.password.data)):
             flash('Login approved!')
-            return redirect(url_for('qurey'))
+            return redirect(url_for('Data'))
         else:
             flash('Error in - Username and/or password')
    
@@ -218,6 +230,43 @@ def Login():
         year=datetime.now().year,
         repository_name='Pandas',
         )
+
+class QueryFormStructureCON(FlaskForm):
+    name = StringField('Number of events by conditions ' , validators = [DataRequired()])
+    submit = SubmitField('Enter')
+
+
+#renders the FP page
+@app.route('/WhatFP' , methods = ['GET' , 'POST'])
+def WhatFP():
+    print("running from qurey()")
+    name = None
+    capital = ''
+    #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/WhatFP.csv (this is the path)
+    df = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\WhatFP.csv'))
+    a = df['Flight Phase'].values
+    df = df.set_index('Flight Phase')
+    form = QueryFormStructureCON(request.form)
+    if (request.method == 'POST' ):
+        name = form.name.data
+        if (name in df.index):
+            capital = list(a).count(name)*14
+            #df.loc[name,'amount']
+        else:
+            capital = name+ ', no such condition'
+        form.name.data= ''
+    raw_data_table = df.to_html(classes = 'table table-hover')
+
+    return render_template('WhatFP.html',
+                           form= form,
+                           name = capital,
+                           raw_data_table = raw_data_table,
+                           title = 'Query by the user',
+                           year=datetime.now().year,
+                           message='query input'
+                           )
+
+
 
 
 
