@@ -1,0 +1,11 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<h1>This is a represention of how many safe and unsafe aircrafts are out there on companies fleets</h1>
+
+<h2>The amount of "safe" aircrafts is:</h2>
+<h3>{{ a | safe }}</h3>
+<h2>The amount of "unsafe" aircrafts is:</h2>
+<h3>{{notsafe | safe}}</h3>
+
+    {% endblock %}

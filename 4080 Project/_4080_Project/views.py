@@ -39,6 +39,9 @@ import requests
 
 
 import matplotlib.pyplot as plt
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from matplotlib.figure import Figure
+
 
 import io
 import base64
@@ -121,26 +124,38 @@ def Privacy():
         title='Privacy',
         year=datetime.now().year,
     )
+
+@app.route('/Fleet')
+def Fleet():
+    df = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\FleetData.csv'))
+    four = df[(df['Aircraft Type'] == 'Boeing 747')|(df['Aircraft Type'] == 'Airbus A380')|(df['Aircraft Type'] == 'Airbus A340')]
+    a = four.size
+    notsafe = df.size - a
+    """Renders the contact page."""
+    return render_template(
+        'Fleet.html',
+        title='Is it safe?',
+        year=datetime.now().year,
+        a=a,
+        notsafe = notsafe
+    )
+
+
+
+
+
 #renders Data
 @app.route('/Data')
 def Data():
-   # df = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\FleetData.csv'))
-   # dd = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\database.csv'))
-   # TOP10 = ['KDEN', 'KDFW', 'KORD', 'KJFK', 'KMEM', 'KSMF', 'KSLC', 'KMCO', 'KLGA', 'KPHL']
-   # size = [358644 , 318648 , 261558 , 216942 , 187044 , 172062 , 152790 , 141372 , 135894 , 134970]
-    #fig = plt.figure()
-    #ax = fig.add_axes([0,0,1,1])
-    #ax.bar(TOP10,size)
-    #a = plt.fig_to_html()
+    #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/databaseM.csv (this is the path)
+    df = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\FleetData.csv'))
+   
     """Renders the Data page."""
-      #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/databaseM.csv (this is the path)
-     
+    
     return render_template(
         'Data.html',
         title='Data:',
         year=datetime.now().year,
-        
-
     )
 
 

@@ -43,6 +43,7 @@
     <Folder Include="_4080_Project\static\fonts\" />
     <Folder Include="_4080_Project\static\Data\" />
     <Folder Include="_4080_Project\Models\" />
+    <Folder Include="_4080_Project\static\IMGS\" />
     <Folder Include="_4080_Project\static\scripts\" />
     <Folder Include="_4080_Project\templates\" />
   </ItemGroup>
@@ -64,6 +65,8 @@
     <Content Include="_4080_Project\static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="_4080_Project\static\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="_4080_Project\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="_4080_Project\static\IMGS\plot.png" />
+    <Content Include="_4080_Project\static\IMGS\TOP.svg" />
     <Content Include="_4080_Project\static\scripts\bootstrap.js" />
     <Content Include="_4080_Project\static\scripts\bootstrap.min.js" />
     <Content Include="_4080_Project\static\scripts\jquery-1.10.2.intellisense.js" />
@@ -90,6 +93,7 @@
     <Content Include="_4080_Project\templates\register.html" />
     <Content Include="_4080_Project\templates\Alowd.html" />
     <Content Include="_4080_Project\templates\Data.html" />
+    <Content Include="_4080_Project\templates\Fleet.html" />
     <Content Include="_4080_Project\templates\WhatFP.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
