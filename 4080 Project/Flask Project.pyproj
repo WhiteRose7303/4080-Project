@@ -65,6 +65,7 @@
     <Content Include="_4080_Project\static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="_4080_Project\static\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="_4080_Project\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="_4080_Project\static\IMGS\Hadar Datasince.png" />
     <Content Include="_4080_Project\static\IMGS\plot.png" />
     <Content Include="_4080_Project\static\IMGS\TOP.svg" />
     <Content Include="_4080_Project\static\scripts\bootstrap.js" />
@@ -94,6 +95,7 @@
     <Content Include="_4080_Project\templates\Alowd.html" />
     <Content Include="_4080_Project\templates\Data.html" />
     <Content Include="_4080_Project\templates\Fleet.html" />
+    <Content Include="_4080_Project\templates\SiteMap.html" />
     <Content Include="_4080_Project\templates\WhatFP.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />

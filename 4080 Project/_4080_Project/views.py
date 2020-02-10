@@ -125,6 +125,16 @@ def Privacy():
         year=datetime.now().year,
     )
 
+@app.route('/SiteMap')
+def SiteMap():
+    """Renders the contact page."""
+    return render_template(
+        'SiteMap.html',
+        title='SiteMap',
+        year=datetime.now().year,
+    )
+
+
 @app.route('/Fleet')
 def Fleet():
     df = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\FleetData.csv'))
