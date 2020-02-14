@@ -137,6 +137,7 @@ def SiteMap():
 
 @app.route('/Fleet')
 def Fleet():
+    #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/FleetData.csv (this is the path)
     df = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\FleetData.csv'))
     four = df[(df['Aircraft Type'] == 'Boeing 747')|(df['Aircraft Type'] == 'Airbus A380')|(df['Aircraft Type'] == 'Airbus A340')]
     a = four.size
@@ -157,7 +158,7 @@ def Fleet():
 #renders Data
 @app.route('/Data')
 def Data():
-    #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/databaseM.csv (this is the path)
+    #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/FleetData.csv (this is the path)
     df = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\FleetData.csv'))
    
     """Renders the Data page."""
