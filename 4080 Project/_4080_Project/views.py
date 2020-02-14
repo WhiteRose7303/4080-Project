@@ -256,8 +256,8 @@ def Login():
         repository_name='Pandas',
         )
 
-class QueryFormStructureCON(FlaskForm):
-    name = StringField('Number of events by conditions ' , validators = [DataRequired()])
+class QueryFormStructureFP(FlaskForm):
+    name = SelectField('Flight Phase? ', choices=[('CLIMB','Climb'), ('TAKEOFF RUN', 'Take Off'),('APPROACH', 'Approach'),('LANDING ROLL', 'Landing Roll'),('EN ROUTE', 'En Route'),('DESCENT', 'Descent')], validators = [DataRequired()])
     submit = SubmitField('Enter')
 
 
@@ -271,14 +271,14 @@ def WhatFP():
     df = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\WhatFP.csv'))
     a = df['Flight Phase'].values
     df = df.set_index('Flight Phase')
-    form = QueryFormStructureCON(request.form)
+    form = QueryFormStructureFP(request.form)
     if (request.method == 'POST' ):
         name = form.name.data
         if (name in df.index):
             capital = list(a).count(name)*14
             #df.loc[name,'amount']
         else:
-            capital = name+ ', no such condition'
+            capital = name+ ', no such Flight phase'
         form.name.data= ''
     raw_data_table = df.to_html(classes = 'table table-hover')
 
