@@ -152,6 +152,30 @@ def Fleet():
     )
 
 
+@app.route('/Account')
+def Account():
+    return render_template(
+        'account.html',
+        title='SiteMap',
+        year=datetime.now().year,
+        
+    )
+
+
+@app.route('/RawData')
+def RawData():
+
+    return render_template(
+        'RawData.html',
+        title='RawData',
+        year=datetime.now().year,
+        
+    )
+
+
+
+
+
 
 
 

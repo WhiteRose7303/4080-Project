@@ -34,6 +34,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Flask_Test_for_bootstrap\" />
+    <Folder Include="assets\" />
+    <Folder Include="assets\css\" />
+    <Folder Include="assets\img\" />
+    <Folder Include="assets\js\" />
+    <Folder Include="assets\plugins\" />
+    <Folder Include="assets\plugins\bootstrap\" />
+    <Folder Include="assets\plugins\countdown\" />
+    <Folder Include="assets\plugins\font-awesome\" />
+    <Folder Include="assets\plugins\fonts\" />
     <Folder Include="Flask_Test_for_bootstrap\static\" />
     <Folder Include="Flask_Test_for_bootstrap\static\content\" />
     <Folder Include="Flask_Test_for_bootstrap\static\fonts\" />
@@ -41,6 +50,26 @@
     <Folder Include="Flask_Test_for_bootstrap\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\img\1.png" />
+    <Content Include="assets\js\countdown.js" />
+    <Content Include="assets\js\custom-color.js" />
+    <Content Include="assets\plugins\bootstrap\bootstrap.js" />
+    <Content Include="assets\plugins\bootstrap\bootstrap.min.css" />
+    <Content Include="assets\plugins\countdown\jquery.countdown.js" />
+    <Content Include="assets\plugins\font-awesome\font-awesome.min.css" />
+    <Content Include="assets\plugins\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="assets\plugins\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="assets\plugins\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="assets\plugins\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="assets\plugins\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="assets\plugins\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\plugins\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\plugins\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\plugins\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\plugins\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="assets\plugins\jquery.easing.1.3.js" />
+    <Content Include="assets\plugins\jquery.min.js" />
     <Content Include="requirements.txt" />
     <Content Include="Flask_Test_for_bootstrap\static\content\bootstrap.css" />
     <Content Include="Flask_Test_for_bootstrap\static\content\bootstrap.min.css" />

@@ -56,6 +56,7 @@ class LocalDatabaseServiceRoutines(object):
 
         df = df.set_index('password')
         
+        
         return (Password in df.index.values)
   
 

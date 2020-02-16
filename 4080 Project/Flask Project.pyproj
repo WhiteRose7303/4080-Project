@@ -96,6 +96,8 @@
     <Content Include="_4080_Project\templates\Data.html" />
     <Content Include="_4080_Project\templates\Fleet.html" />
     <Content Include="_4080_Project\templates\SiteMap.html" />
+    <Content Include="_4080_Project\templates\account.html" />
+    <Content Include="_4080_Project\templates\RawData.html" />
     <Content Include="_4080_Project\templates\WhatFP.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />

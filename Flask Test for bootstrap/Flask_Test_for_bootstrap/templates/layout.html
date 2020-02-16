@@ -1,98 +1,182 @@
 ﻿<!DOCTYPE html>
-<html>
-<title>Hadar's end of year Project</title>
-<link rel="icon" type="image/jpg" href="IMGS/aircraft-icon-29.jpg">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    body, h1, h2, h3, h4, h5, h6 {
-        font-family: "Lato", sans-serif;
-    }
-
-    body, html {
-        height: 100%;
-        color: #777;
-        line-height: 1.8;
-    }
-
-    /* Create a Parallax Effect */
-    .bgimg-1, .bgimg-2, .bgimg-3 {
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    /* First image (Logo. Full height) */
-    .bgimg-1 {
-        background-image: url('/IMGS/United-Boeing-737-700-e1563407574286-678x381.jpg');
-        min-height: 100%;
-    }
-
-    /* Second image (Portfolio) */
-    .bgimg-2 {
-        background-image: url("/w3images/parallax2.jpg");
-        min-height: 400px;
-    }
-
-    /* Third image (Contact) */
-    .bgimg-3 {
-        background-image: url("/w3images/parallaxx3.jpg");
-        min-height: 400px;
-    }
-
-    .w3-wide {
-        letter-spacing: 10px;
-    }
-
-    .w3-hover-opacity {
-        cursor: pointer;
-    }
-
-    /* Turn off parallax scrolling for tablets and phones */
-    @media only screen and (max-device-width: 1600px) {
-        .bgimg-1, .bgimg-2, .bgimg-3 {
-            background-attachment: scroll;
-            min-height: 400px;
-        }
-    }
-</style>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>Free Bootstrap Flask Landing Page Template </title>
+    <!--REQUIRED STYLE SHEETS-->
+    <!--MAIN BOOTSTRAP STYLE-->
+    <link href="assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <!--FONT AWESOME STYLE -->
+    <link href="assets/plugins/font-awesome/font-awesome.min.css" rel="stylesheet" />
+    <!--CUSTOM STYLE -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <!--END REQUIRED STYLE SHEETS-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
 <body>
-
-    <!-- Navbar (sit on top) -->
-    <div class="w3-top">
-        <div class="w3-bar" id="myNavbar">
-            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-                <i class="fa fa-bars"></i>
-            </a>
-            <a href="{{ url_for('home') }}" class="w3-bar-item w3-button">HOME</a>
-            <a href="{{ url_for('contact') }}" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT THE PROJECT</a>
-            <a href="#Project" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> THE PROJECT</a>
-            <a href="#Thankyou" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> THANK YOU!</a>
-            <a href="#Database" class="w3-bar-item w3-button w3-hide-small">
-                <i class="fa fa-envelope"></i> <a href="https://www.kaggle.com/faa/wildlife-strikes">DATABASE</a>
-                <a href="#StaticWebsite" class="w3-bar-item w3-button w3-hide-small">
-                    <i class="fa fa-arrow-up"><a href="https://hadarova5384.pythonanywhere.com/">Dynamic website</a></i>
-                    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
-                        <i class="fa fa-search"></i>
-                    </a>
+    <!-- LEFT MENU SECTION -->
+    <section class="left-panel">
+        <nav class="navigatation">
+            <div class="menu-text">
+                <h3><i class="fa fa-flask main-color"></i> Flask </h3>
+            </div>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <a href="#">Demo Link</a>
+            <a href="#">Demo Link</a>
+            <a href="#">Demo Link</a>
+        </nav>
+        <!-- ./Navigation links-->
+        <div id="social-links" class="Icon-trigger">
+            <span class="fa fa-bars"></span>
         </div>
+        <!-- ./Social links-->
+        <!-- ./Social links-->
+    </section>
+    <!--END LEFT MENU SECTION -->
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+        <!-- HOME SECION -->
+        <section id="home-section">
+            <div class="row">
 
-        <div class="container body-content">
-            {% block content %}{% endblock %}
-            <hr />
-            <footer>
-                <p>&copy; {{ year }} - Hadar OV</p>
-            </footer>
-        </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+                    <img class="img-circle" src="assets/img/1.png">
+                    <h3><strong> JHON DEO ALEX</strong></h3>
+                    <h4>Go Live Blogging</h4>
+                    <p style="padding-left:40px;padding-right:40px;">
 
-        <script src="/static/scripts/jquery-1.10.2.js"></script>
-        <script src="/static/scripts/bootstrap.js"></script>
-        <script src="/static/scripts/respond.js"></script>
-        {% block scripts %}{% endblock %}
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec enim sapien.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec enim sapien.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec enim sapien.
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+                    <h1>LANDING  <i class="fa fa-flask main-color fa-spin"></i> FLASK  </h1>
+                    <br>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec enim sapien.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec enim sapien.
+                    </p>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                            <div id="counter"></div>
+                            <div id="counter-default" class="row">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="inner">
+                                        <div id="day-number" class="timer-number"></div>
+                                        <div class="timer-text">DAYS</div>
+                                        <div class="progress medium  active">
+                                            <div id="day-bar" class="progress-bar bk-blue"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="inner">
+                                        <div id="hour-number" class="timer-number"></div>
+                                        <div class="timer-text">HOURS</div>
+                                        <div class="progress medium  active">
+                                            <div id="hour-bar" class="progress-bar bk-green"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="inner">
+                                        <div id="minute-number" class="timer-number"></div>
+                                        <div class="timer-text">MINUTES</div>
+                                        <div class="progress medium  active">
+                                            <div id="minute-bar" class="progress-bar bk-pink"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="inner">
+                                        <div id="second-number" class="timer-number"></div>
+                                        <div class="timer-text">SECOND</div>
+
+                                        <div class="progress medium  active">
+                                            <div id="second-bar" class="progress-bar bk-red"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ./Counter -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--./row-->
+        </section>
+        <!-- END HOME SECION -->
+        <!-- SUBSCRIBE SECION -->
+        <section id="subscribe-section">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                    <h1 class="center">
+                        SUBSCRIBE <i class="fa fa-flask"></i> US NOW</h2>
+                        <div class="divider-two margin-botom-50"></div>
+                        <!-- ./Headings -->
+                        <p class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 center">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
+                        </p>
+                        <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 center">
+                            <p class="set-sb ">
+
+                                <input class="form-control font-30 input-set" type="text" placeholder="Enter Your Email">
+                                <br />
+                                <input type="button" class="btn btn-success font-30" value="SUBSCRIBE NOW" />
+                            </p>
+                            <p>
+                                <strong>Lorem ipsum dolor</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
+                            </p>
+                        </div>
+                </div>
+            </div>
+            <!--./row-->
+        </section>
+        <!-- END SUBSCRIBE SECION -->
+        <!-- FOOTER SECION -->
+        <section id="footer">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    &copy; www.yourwebsite.com 2014 | All rights Reserved.
+                </div>
+            </div>
+            <!--./row-->
+        </section>
+        <!--END FOOTER SECION -->
+    </div>
+    <!-- END MAIN CONTAINER -->
+    <!--REQUIRED SCRIPTS FILES-->  <!--SCRIPTS AT END SO PAGE WILL TAKE LESS TIME TO LOAD-->
+    <!--REQUIRED CORE JQUERY SCRIPTS FILE-->
+    <script src="assets/plugins/jquery.min.js"></script>
+    <!--REQUIRED BOOTSTRAP SCRIPTS FILE-->
+    <script src="assets/plugins/bootstrap/bootstrap.js"></script>
+    <!--REQUIRED SCRIPT FILES FOR JQUERY COUNTDOWN-->
+    <script src="assets/plugins/countdown/jquery.countdown.js"></script>
+    <script src="assets/js/countdown.js"></script>
+    <!--REQUIRED SCRIPT FOR SCROLLING MENU LINKS-->
+    <script src="assets/plugins/jquery.easing.1.3.js"></script>
+    <!--REQUIRED CUSTOM SCRIPT FILE-->
+    <script src="assets/js/custom-color.js"></script>
+    <!--END REQUIRED SCRIPTS FILES-->
 </body>
 </html>
