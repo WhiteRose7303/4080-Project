@@ -1,3 +1,4 @@
+#pacage import
 def Imports():
     from datetime import datetime
     from flask import render_template
@@ -64,7 +65,7 @@ def Imports():
 
 BooleanField, Counter, DataRequired, DateField, Figure, FigureCanvas, Flask, FlaskForm, Form, LoginFormStructure, PasswordField, QueryFormStructure, SelectField, StringField, SubmitField, TextAreaField, TextField, UserRegistrationFormStructure, ValidationError, app, base64, create_LocalDatabaseServiceRoutines, datetime, flash, io, json, make_response, np, os, pd, plt, redirect, render_template, request, requests, session, url_for, validators = Imports()
 
-
+#URL import 
 def URL():
     URL_1 = "https://raw.githubusercontent.com/WhiteRose7303/Data/master/databaseM.csv"
     UURL_1 = requests.get(URL_1).content
@@ -76,21 +77,15 @@ def URL():
 
 URL_1, URL_2, URL_3, UURL_1, UURL_2, UURL_3 = URL()
 
+#secret key
+def Secret():
+    app.config['SECRET_KEY'] = 'The first argument to the field'
+    db_Functions = create_LocalDatabaseServiceRoutines()
+    return db_Functions
 
-#print("Push Pull or Run?")
-#input = input("choose...")
-#if (input == "push"):
-#    os.system('git push git@github.com:WhiteRose7303/Flask-Project-H_O.git')
-#elif (input == "pull"):
-#    os.system('git pull git@github.com:WhiteRose7303/Flask-Project-H_O.git')
-#else:
-#    print("OK")
-#os.system('git pull git@github.com:WhiteRose7303/Flask-Project-H_O.git')
+db_Functions = Secret() 
 
-app.config['SECRET_KEY'] = 'The first argument to the field'
-db_Functions = create_LocalDatabaseServiceRoutines() 
-
-
+#home render
 @app.route('/')
 @app.route('/home')
 def home():
@@ -100,7 +95,7 @@ def home():
         title='Home Page',
         year=datetime.now().year,
     )
-#add
+#contact
 @app.route('/contact')
 def contact():
     """Renders the contact page."""
@@ -110,7 +105,7 @@ def contact():
         year=datetime.now().year,
         message='I would love to hear your feedback'
     )
-
+#about
 @app.route('/about')
 def about():
     """Renders the about page."""
@@ -120,7 +115,7 @@ def about():
         year=datetime.now().year,
         message='Your application description page.'
     )
-
+#gallray
 @app.route('/Photoalbum')
 def Photoalbum():
     """Renders the contact page."""
@@ -129,7 +124,7 @@ def Photoalbum():
         title='Photoalbum',
         year=datetime.now().year,
     )
-
+#privacy
 @app.route('/Privacy')
 def Privacy():
     """Renders the contact page."""
@@ -138,7 +133,7 @@ def Privacy():
         title='Privacy',
         year=datetime.now().year,
     )
-
+#sitemap
 @app.route('/SiteMap')
 def SiteMap():
     """Renders the contact page."""
@@ -147,8 +142,7 @@ def SiteMap():
         title='SiteMap',
         year=datetime.now().year,
     )
-
-
+#fleet
 @app.route('/Fleet')
 def Fleet():
     #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/FleetData.csv (this is the path)
@@ -164,8 +158,7 @@ def Fleet():
         a=a,
         notsafe = notsafe
     )
-
-
+#account
 @app.route('/Account')
 def Account():
     return render_template(
@@ -174,8 +167,7 @@ def Account():
         year=datetime.now().year,
         
     )
-
-
+#raw
 @app.route('/RawData')
 def RawData():
 
@@ -185,15 +177,7 @@ def RawData():
         year=datetime.now().year,
         
     )
-
-
-
-
-
-
-
-
-#renders Data
+#data
 @app.route('/Data')
 def Data():
     #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/FleetData.csv (this is the path)
