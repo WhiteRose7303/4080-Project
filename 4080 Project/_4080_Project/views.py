@@ -63,11 +63,11 @@ from _4080_Project.Models.QueryFormStructure import UserRegistrationFormStructur
 from _4080_Project.Models.LocalDatabaseRoutines import create_LocalDatabaseServiceRoutines
 
 
-URL_1 = "https://raw.githubusercontent.com/WhiteRose7303/Flask-Project-H_O/28/1/20/Data/databaseM.csv"
+URL_1 = "https://raw.githubusercontent.com/WhiteRose7303/Data/master/databaseM.csv"
 UURL_1 = requests.get(URL_1).content
-URL_2 = "https://raw.githubusercontent.com/WhiteRose7303/Flask-Project-H_O/28/1/20/Data/WhatFP.csv"
+URL_2 = "https://raw.githubusercontent.com/WhiteRose7303/Data/master/WhatFP.csv"
 UURL_2 = requests.get(URL_2).content
-URL_3 = "https://raw.githubusercontent.com/WhiteRose7303/Flask-Project-H_O/28/1/20/Data/FleetData.csv"
+URL_3 = "https://raw.githubusercontent.com/WhiteRose7303/Data/master/FleetData.csv"
 UURL_3 = requests.get(URL_3).content
 
 
