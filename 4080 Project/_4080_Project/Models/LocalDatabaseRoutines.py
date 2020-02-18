@@ -4,7 +4,9 @@ Used structures and classes
 from os import path
 import json
 import pandas as pd
-
+import requests
+USER ="https://raw.githubusercontent.com/WhiteRose7303/Flask-Project-H_O/28/1/20/Data/users.csv"
+s=requests.get(USER).content
 def create_LocalDatabaseServiceRoutines():
     return LocalDatabaseServiceRoutines()
 
@@ -13,15 +15,14 @@ class LocalDatabaseServiceRoutines(object):
         self.name = 'Data base service routines'
         self.index = {}
         #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/users.csv
-        self.UsersDataFile = path.join(path.dirname(__file__), '..\\static\\Data\\users.csv')
-        
+        self.UsersDataFile = pd.read_csv(USER)   
 
 
 # -------------------------------------------------------
 # Read users data into a dataframe
 # -------------------------------------------------------
     def ReadCSVUsersDB(self):
-        df = pd.read_csv(self.UsersDataFile)
+        df = pd.read_csv(USER)
         return df
 
     #read alowd

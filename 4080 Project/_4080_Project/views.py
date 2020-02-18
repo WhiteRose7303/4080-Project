@@ -46,7 +46,7 @@ from matplotlib.figure import Figure
 import io
 import base64
 
-from os import path
+import os
 
 
 from flask   import Flask, render_template, flash, request
@@ -61,6 +61,14 @@ from _4080_Project.Models.QueryFormStructure import QueryFormStructure
 from _4080_Project.Models.QueryFormStructure import LoginFormStructure 
 from _4080_Project.Models.QueryFormStructure import UserRegistrationFormStructure 
 from _4080_Project.Models.LocalDatabaseRoutines import create_LocalDatabaseServiceRoutines
+
+
+URL_1 = "https://raw.githubusercontent.com/WhiteRose7303/Flask-Project-H_O/28/1/20/Data/databaseM.csv"
+UURL_1 = requests.get(URL_1).content
+URL_2 = "https://raw.githubusercontent.com/WhiteRose7303/Flask-Project-H_O/28/1/20/Data/WhatFP.csv"
+UURL_2 = requests.get(URL_2).content
+URL_3 = "https://raw.githubusercontent.com/WhiteRose7303/Flask-Project-H_O/28/1/20/Data/FleetData.csv"
+UURL_3 = requests.get(URL_3).content
 
 
 #print("Push Pull or Run?")
@@ -138,7 +146,7 @@ def SiteMap():
 @app.route('/Fleet')
 def Fleet():
     #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/FleetData.csv (this is the path)
-    df = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\FleetData.csv'))
+    df = pd.read_csv(URL_3)
     four = df[(df['Aircraft Type'] == 'Boeing 747')|(df['Aircraft Type'] == 'Airbus A380')|(df['Aircraft Type'] == 'Airbus A340')]
     a = four.size
     notsafe = df.size - a
@@ -183,7 +191,7 @@ def RawData():
 @app.route('/Data')
 def Data():
     #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/FleetData.csv (this is the path)
-    df = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\FleetData.csv'))
+    df = pd.read_csv(URL_3)
    
     """Renders the Data page."""
     
@@ -205,7 +213,7 @@ def qurey():
     name = None
     capital = ''
     #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/databaseM.csv (this is the path)
-    df = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\databaseM.csv'))
+    df = pd.read_csv(URL_1)
     a = df['Airport ID'].values
     df = df.set_index('Airport ID')
     form = QueryFormStructureAIR(request.form)
@@ -293,7 +301,7 @@ def WhatFP():
     name = None
     capital = ''
     #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/WhatFP.csv (this is the path)
-    df = pd.read_csv(path.join(path.dirname(__file__) , 'static\Data\WhatFP.csv'))
+    df = pd.read_csv(URL_2)
     a = df['Flight Phase'].values
     df = df.set_index('Flight Phase')
     form = QueryFormStructureFP(request.form)
