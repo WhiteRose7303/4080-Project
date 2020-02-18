@@ -1,12 +1,20 @@
 """
 Used structures and classes
 """
-from os import path
-import json
-import pandas as pd
-import requests
-USER ="https://raw.githubusercontent.com/WhiteRose7303/Data/master/users.csv"
-s=requests.get(USER).content
+def Imports():
+    from os import path
+    import json
+    import pandas as pd
+    import requests
+    return json, path, pd, requests
+
+json, path, pd, requests = Imports()
+def URL():
+    USER ="https://raw.githubusercontent.com/WhiteRose7303/Data/master/users.csv"
+    return USER
+
+USER = URL()
+
 def create_LocalDatabaseServiceRoutines():
     return LocalDatabaseServiceRoutines()
 

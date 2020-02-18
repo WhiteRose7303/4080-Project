@@ -1,74 +1,80 @@
+def Imports():
+    from datetime import datetime
+    from flask import render_template
+    from flask import request
+    from flask import redirect
+    from flask import make_response
+    from flask import session, redirect, url_for
+    from _4080_Project import app
+    
+    
+    
+    import matplotlib.pyplot as plt
+    import os
+    from collections import Counter
+    import pandas as pd
+    
+    
+    import io
+    import base64
+    
+    from datetime import datetime
+    from flask import render_template
+    from _4080_Project import app
+    
+    from flask import render_template, redirect, request
+    
+    
+    from flask_wtf import FlaskForm
+    from wtforms import StringField, SubmitField
+    from wtforms.validators import DataRequired
+    
+    import numpy as np
+    import matplotlib.pyplot as plt
+    
+    
+    import json 
+    import requests
+    
+    
+    import matplotlib.pyplot as plt
+    from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+    from matplotlib.figure import Figure
+    
+    
+    import io
+    import base64
+    
+    import os
+    
+    
+    from flask   import Flask, render_template, flash, request
+    from wtforms import Form, BooleanField, StringField, PasswordField, validators
+    from wtforms import TextField, TextAreaField, SubmitField, SelectField, DateField
+    from wtforms import ValidationError
+    
+    
+    
+    from _4080_Project.Models.QueryFormStructure import QueryFormStructure 
+    
+    from _4080_Project.Models.QueryFormStructure import LoginFormStructure 
+    from _4080_Project.Models.QueryFormStructure import UserRegistrationFormStructure 
+    from _4080_Project.Models.LocalDatabaseRoutines import create_LocalDatabaseServiceRoutines
+    return BooleanField, Counter, DataRequired, DateField, Figure, FigureCanvas, Flask, FlaskForm, Form, LoginFormStructure, PasswordField, QueryFormStructure, SelectField, StringField, SubmitField, TextAreaField, TextField, UserRegistrationFormStructure, ValidationError, app, base64, create_LocalDatabaseServiceRoutines, datetime, flash, io, json, make_response, np, os, pd, plt, redirect, render_template, request, requests, session, url_for, validators
+
+BooleanField, Counter, DataRequired, DateField, Figure, FigureCanvas, Flask, FlaskForm, Form, LoginFormStructure, PasswordField, QueryFormStructure, SelectField, StringField, SubmitField, TextAreaField, TextField, UserRegistrationFormStructure, ValidationError, app, base64, create_LocalDatabaseServiceRoutines, datetime, flash, io, json, make_response, np, os, pd, plt, redirect, render_template, request, requests, session, url_for, validators = Imports()
 
 
-from datetime import datetime
-from flask import render_template
-from flask import request
-from flask import redirect
-from flask import make_response
-from flask import session, redirect, url_for
-from _4080_Project import app
+def URL():
+    URL_1 = "https://raw.githubusercontent.com/WhiteRose7303/Data/master/databaseM.csv"
+    UURL_1 = requests.get(URL_1).content
+    URL_2 = "https://raw.githubusercontent.com/WhiteRose7303/Data/master/WhatFP.csv"
+    UURL_2 = requests.get(URL_2).content
+    URL_3 = "https://raw.githubusercontent.com/WhiteRose7303/Data/master/FleetData.csv"
+    UURL_3 = requests.get(URL_3).content
+    return URL_1, URL_2, URL_3, UURL_1, UURL_2, UURL_3
 
-
-
-import matplotlib.pyplot as plt
-import os
-from collections import Counter
-import pandas as pd
-
-
-import io
-import base64
-
-from datetime import datetime
-from flask import render_template
-from _4080_Project import app
-
-from flask import render_template, redirect, request
-
-
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-
-import json 
-import requests
-
-
-import matplotlib.pyplot as plt
-from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-from matplotlib.figure import Figure
-
-
-import io
-import base64
-
-import os
-
-
-from flask   import Flask, render_template, flash, request
-from wtforms import Form, BooleanField, StringField, PasswordField, validators
-from wtforms import TextField, TextAreaField, SubmitField, SelectField, DateField
-from wtforms import ValidationError
-
-
-
-from _4080_Project.Models.QueryFormStructure import QueryFormStructure 
-
-from _4080_Project.Models.QueryFormStructure import LoginFormStructure 
-from _4080_Project.Models.QueryFormStructure import UserRegistrationFormStructure 
-from _4080_Project.Models.LocalDatabaseRoutines import create_LocalDatabaseServiceRoutines
-
-
-URL_1 = "https://raw.githubusercontent.com/WhiteRose7303/Data/master/databaseM.csv"
-UURL_1 = requests.get(URL_1).content
-URL_2 = "https://raw.githubusercontent.com/WhiteRose7303/Data/master/WhatFP.csv"
-UURL_2 = requests.get(URL_2).content
-URL_3 = "https://raw.githubusercontent.com/WhiteRose7303/Data/master/FleetData.csv"
-UURL_3 = requests.get(URL_3).content
+URL_1, URL_2, URL_3, UURL_1, UURL_2, UURL_3 = URL()
 
 
 #print("Push Pull or Run?")
@@ -323,11 +329,4 @@ def WhatFP():
                            year=datetime.now().year,
                            message='query input'
                            )
-
-
-
-
-
-
-
 
