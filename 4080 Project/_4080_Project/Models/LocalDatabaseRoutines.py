@@ -11,6 +11,7 @@ def Imports():
 json, path, pd, requests = Imports()
 def URL():
     USER ="https://raw.githubusercontent.com/WhiteRose7303/Data/master/users.csv"
+    
     return USER
 
 USER = URL()
@@ -23,7 +24,7 @@ class LocalDatabaseServiceRoutines(object):
         self.name = 'Data base service routines'
         self.index = {}
         #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/users.csv
-        self.UsersDataFile = pd.read_csv(USER,  encoding='utf-8')   
+        self.UsersDataFile = pd.read_csv(USER)
 
 
 # -------------------------------------------------------
