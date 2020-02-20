@@ -151,7 +151,7 @@ def SiteMap():
 
 @app.route('/Fleet')
 def Fleet():
-    #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/FleetData.csv (this is the path)
+    "/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/FleetData.csv (this is the path)"
     df = pd.read_csv(URL_3)
     four = df[(df['Aircraft Type'] == 'Boeing 747')|(df['Aircraft Type'] == 'Airbus A380')|(df['Aircraft Type'] == 'Airbus A340')]
     a = four.size
