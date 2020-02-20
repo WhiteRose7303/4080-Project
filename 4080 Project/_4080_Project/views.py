@@ -151,7 +151,6 @@ def SiteMap():
 
 @app.route('/Fleet')
 def Fleet():
-    #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/FleetData.csv (this is the path)
     df = pd.read_csv(URL_3)
     four = df[(df['Aircraft Type'] == 'Boeing 747')|(df['Aircraft Type'] == 'Airbus A380')|(df['Aircraft Type'] == 'Airbus A340')]
     a = four.size
@@ -196,7 +195,6 @@ def RawData():
 #renders Data
 @app.route('/Data')
 def Data():
-    #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/FleetData.csv (this is the path)
     df = pd.read_csv(URL_3)
    
     """Renders the Data page."""
@@ -218,7 +216,7 @@ def qurey():
     print("running from qurey()")
     name = None
     capital = ''
-    #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/databaseM.csv (this is the path)
+    
     df = pd.read_csv(URL_1)
     a = df['Airport ID'].values
     df = df.set_index('Airport ID')
@@ -306,7 +304,7 @@ def WhatFP():
     print("running from qurey()")
     name = None
     capital = ''
-    #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/WhatFP.csv (this is the path)
+    
     df = pd.read_csv(URL_2)
     a = df['Flight Phase'].values
     df = df.set_index('Flight Phase')

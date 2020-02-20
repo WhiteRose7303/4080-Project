@@ -23,7 +23,7 @@ class LocalDatabaseServiceRoutines(object):
         self.name = 'Data base service routines'
         self.index = {}
         #/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/users.csv
-        self.UsersDataFile = pd.read_csv(USER)   
+        self.UsersDataFile = pd.read_csv(USER,  encoding='utf-8')   
 
 
 # -------------------------------------------------------
