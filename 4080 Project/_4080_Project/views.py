@@ -186,6 +186,15 @@ def RawData():
         
     )
 
+@app.route('/Soduku')
+def Soduku():
+    return render_template(
+        'Soduku.html',
+        title='Solver',
+        year=datetime.now().year,
+        
+    )
+
 
 
 

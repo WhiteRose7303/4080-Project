@@ -45,10 +45,14 @@
     <Folder Include="_4080_Project\Models\" />
     <Folder Include="_4080_Project\static\IMGS\" />
     <Folder Include="_4080_Project\static\scripts\" />
+    <Folder Include="_4080_Project\static\scripts\grid\" />
+    <Folder Include="_4080_Project\static\scripts\math\" />
+    <Folder Include="_4080_Project\static\scripts\solver\" />
     <Folder Include="_4080_Project\templates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Test.sh" />
+    <Content Include="_4080_Project\static\content\main.css" />
     <Content Include="_4080_Project\static\Data\All airports in data.csv" />
     <Content Include="_4080_Project\static\Data\Capitals.csv" />
     <Content Include="requirements.txt" />
@@ -70,6 +74,11 @@
     <Content Include="_4080_Project\static\IMGS\TOP.svg" />
     <Content Include="_4080_Project\static\scripts\bootstrap.js" />
     <Content Include="_4080_Project\static\scripts\bootstrap.min.js" />
+    <Content Include="_4080_Project\static\scripts\grid.js" />
+    <Content Include="_4080_Project\static\scripts\grid\constants.js" />
+    <Content Include="_4080_Project\static\scripts\grid\drawer.js" />
+    <Content Include="_4080_Project\static\scripts\grid\manipulation.js" />
+    <Content Include="_4080_Project\static\scripts\grid\user_grid.js" />
     <Content Include="_4080_Project\static\scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="_4080_Project\static\scripts\jquery-1.10.2.js" />
     <Content Include="_4080_Project\static\scripts\jquery-1.10.2.min.js" />
@@ -79,9 +88,16 @@
     <Content Include="_4080_Project\static\scripts\jquery.validate.min.js" />
     <Content Include="_4080_Project\static\scripts\jquery.validate.unobtrusive.js" />
     <Content Include="_4080_Project\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="_4080_Project\static\scripts\main.js" />
+    <Content Include="_4080_Project\static\scripts\math.js" />
+    <Content Include="_4080_Project\static\scripts\math\matrix.js" />
     <Content Include="_4080_Project\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="_4080_Project\static\scripts\program.js" />
     <Content Include="_4080_Project\static\scripts\respond.js" />
     <Content Include="_4080_Project\static\scripts\respond.min.js" />
+    <Content Include="_4080_Project\static\scripts\solver.js" />
+    <Content Include="_4080_Project\static\scripts\solver\algorithm.js" />
+    <Content Include="_4080_Project\static\scripts\solver\cross_number_exclusion.js" />
     <Content Include="_4080_Project\static\scripts\_references.js" />
     <Content Include="_4080_Project\templates\about.html" />
     <Content Include="_4080_Project\templates\contact.html" />
@@ -98,6 +114,7 @@
     <Content Include="_4080_Project\templates\SiteMap.html" />
     <Content Include="_4080_Project\templates\account.html" />
     <Content Include="_4080_Project\templates\RawData.html" />
+    <Content Include="_4080_Project\templates\Soduku.html" />
     <Content Include="_4080_Project\templates\WhatFP.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
