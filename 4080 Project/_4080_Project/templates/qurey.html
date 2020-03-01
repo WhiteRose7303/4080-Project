@@ -17,6 +17,8 @@
 </form>
 <p><h1>Amount Of Events: <b>{{name}}</b></h1></p>
 <h3>Table:</h3>
-{{raw_data_table | safe}}
-
-{% endblock %}
+<button class="btn btn-primary btn-large" data-toggle="collapse" data-target="#demo">Expand</button>
+<div id="demo" class="collapse">
+    {{raw_data_table | safe}}
+</div>
+     {% endblock %}
