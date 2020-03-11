@@ -32,6 +32,9 @@
   <ItemGroup>
     <Compile Include="runserver.py" />
     <Compile Include="_4080_Project\Models\LocalDatabaseRoutines.py" />
+    <Compile Include="_4080_Project\Models\Forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="_4080_Project\Models\QueryFormStructure.py" />
     <Compile Include="_4080_Project\__init__.py" />
     <Compile Include="_4080_Project\views.py" />

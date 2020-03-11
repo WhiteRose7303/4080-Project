@@ -76,6 +76,13 @@ def URL():
 
 URL_1, URL_2, URL_3, UURL_1, UURL_2, UURL_3 = URL()
 
+
+from flask_bootstrap import Bootstrap
+bootstrap = Bootstrap(app)
+from  _4080_Project.Models.Forms import ExpandForm
+from  _4080_Project.Models.Forms import CollapseForm
+
+
 #chheck
 #print("Push Pull or Run?")
 #input = input("choose...")
@@ -195,13 +202,6 @@ def Soduku():
         
     )
 
-
-
-
-
-
-
-
 #renders Data
 @app.route('/Data')
 def Data():
@@ -226,7 +226,9 @@ def qurey():
     print("running from qurey()")
     name = None
     capital = ''
-    
+    form1 = ExpandForm()
+    form2 = CollapseForm()
+
     df = pd.read_csv(URL_1)
     a = df['Airport ID'].values
     df = df.set_index('Airport ID')
@@ -241,13 +243,23 @@ def qurey():
         form.name.data= ''
     raw_data_table = df.to_html(classes = 'table table-hover')
 
+    if request.method == 'POST':
+        if request.form['action'] == 'Expand' and form1.validate_on_submit():
+            raw_data_table = df.to_html(classes = 'table table-hover')
+        if request.form['action'] == 'Collapse' and form2.validate_on_submit():
+            raw_data_table = ''
+                         
+
+
     return render_template('qurey.html',
                            form= form,
                            name = capital,
                            raw_data_table = raw_data_table,
                            title = 'Query by the user',
                            year=datetime.now().year,
-                           message='query input'
+                           message='query input',
+                           form1 = form1,
+                           form2 = form2
                            )
 
     
