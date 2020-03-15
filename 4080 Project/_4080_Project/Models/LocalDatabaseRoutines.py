@@ -18,7 +18,7 @@ USER = URL()
 
 def create_LocalDatabaseServiceRoutines():
     return LocalDatabaseServiceRoutines()
-#change
+#change set of local database routine
 class LocalDatabaseServiceRoutines(object):
     def __init__(self):
         self.name = 'Data base service routines'
