@@ -184,12 +184,12 @@ def Account():
     )
 
 
-@app.route('/rawd')
+@app.route('/Rawd')
 def rawd():
     rawdata_f = pd.read_csv(URL_3)
     rawf = rawdata_f.to_html()
     return render_template(
-        'rawd.html',
+        'Rawd.html',
         title='SiteMap',
         year=datetime.now().year,
         rawf = rawf
