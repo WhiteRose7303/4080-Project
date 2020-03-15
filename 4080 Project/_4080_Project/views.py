@@ -76,6 +76,7 @@ def URL():
 
 URL_1, URL_2, URL_3, UURL_1, UURL_2, UURL_3 = URL()
 
+URL_4 = 'https://raw.githubusercontent.com/WhiteRose7303/Flask-Project-H_O/25/2/20/4080%20Project/_4080_Project/static/Data/database.csv'
 
 from flask_bootstrap import Bootstrap
 bootstrap = Bootstrap(app)
@@ -183,6 +184,18 @@ def Account():
     )
 
 
+@app.route('/rawd')
+def rawd():
+    rawdata_f = pd.read_csv(URL_3)
+    rawf = rawdata_f.to_html()
+    return render_template(
+        'rawd.html',
+        title='SiteMap',
+        year=datetime.now().year,
+        rawf = rawf
+        
+    )
+
 @app.route('/RawData')
 def RawData():
 
@@ -190,6 +203,7 @@ def RawData():
         'RawData.html',
         title='RawData',
         year=datetime.now().year,
+      
         
     )
 
