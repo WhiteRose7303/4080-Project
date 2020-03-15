@@ -1,7 +1,7 @@
 """
 This script runs the _4080_Project application using a development server.
 """
-#TEST
+
 from os import environ
 from _4080_Project import app
 
