@@ -119,6 +119,7 @@
     <Content Include="_4080_Project\templates\RawData.html" />
     <Content Include="_4080_Project\templates\Soduku.html" />
     <Content Include="_4080_Project\templates\Rawd.html" />
+    <Content Include="_4080_Project\templates\AvsA.html" />
     <Content Include="_4080_Project\templates\WhatFP.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />

@@ -1,0 +1,20 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<form method=post>
+    {{ form.csrf }}
+    <table>
+        <tr>
+            <td class="input text"> {{ form.name.label }}</td>
+            <td>                    {{ form.name }}      </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="input submit"> <input type="submit" value="Check?" /></td>
+        </tr>
+    </table>
+</form>
+<p><h1>Plot: <b>{{name}}</b></h1></p>
+
+{% endblock %}
