@@ -396,10 +396,10 @@ def AvsA():
         a = df['Aircraft'].values
         name = form.name.data
         name2 = form.name2.data
-        Air1 = df[(df['Aircraft'])]
-        Air2 = df[(df['Aircraft'])]
-        Air1.groupby(name).count()
-        Air2.groupby(name2).count()
+        Air1 = df[(df['Aircraft'] == name)]
+        Air2 = df[(df['Aircraft'] == name2)]
+        Air1 = Air1.size()
+        Air2 = Air2.size()
    
     print("im here")    
     sizes = [Air1, Air2]
@@ -420,7 +420,6 @@ def AvsA():
                            message='query input',
                            chart = chart ,
                            height = "250" ,
-                           width = "750"
-                          
+                           width = "750" 
                            )
 
