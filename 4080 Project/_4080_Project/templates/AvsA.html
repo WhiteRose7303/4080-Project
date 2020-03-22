@@ -4,10 +4,13 @@
 
 <form method=post>
     {{ form.csrf }}
+    {{ form.csrf_token }}
     <table>
         <tr>
             <td class="input text"> {{ form.name.label }}</td>
             <td>                    {{ form.name }}      </td>
+            <td class="input text"> {{ form.name2.label }}</td>
+            <td>                    {{ form.name2 }}      </td>
         </tr>
         <tr>
             <td></td>
@@ -15,6 +18,8 @@
         </tr>
     </table>
 </form>
-<p><h1>Plot: <b>{{name}}</b></h1></p>
-
-{% endblock %}
+<p><h1>Plot: </h1></p>
+<div class="col-md-8">
+    <img src={{ chart }} class="img-thumbnail" alt="not found" height={{height}} width={{ width }}>
+</div>
+    {% endblock %}
