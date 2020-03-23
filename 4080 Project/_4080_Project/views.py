@@ -389,32 +389,29 @@ class QueryFormStructureFD(FlaskForm):
 
 @app.route('/AvsA' , methods = ['GET' , 'POST'])
 def AvsA():
+    chart = None
     print("running from qurey()")
     form = QueryFormStructureFD(request.form)
-    if (True):
+    if (request.method == 'POST' ):
         df = pd.read_csv(URL_4)
-        a = df['Aircraft'].values
         name = form.name.data
         name2 = form.name2.data
         Air1 = df[(df['Aircraft'] == name)]
         Air2 = df[(df['Aircraft'] == name2)]
-        Air1 = Air1.size()
-        Air2 = Air2.size()
-   
-    print("im here")    
-    sizes = [Air1, Air2]
-    names = [name,name2]
-     
-    fig = plt.figure()
-    ax = fig.add_axes([0,0,1,1])
-    ax.bar(names,sizes)
-    chart = plot_to_img(fig)
-    
-    raw_data_table = df.to_html(classes = 'table table-hover')
+        Air1 = df.groupby('Aircraft').size()
+        Air2 = df.groupby('Aircraft').size()
+        print("im here")    
+        sizes = [Air1, Air2]
+        names = [name,name2]
+        fig = plt.figure()
+        ax = fig.add_axes([0,0,1,1])
+        ax.bar(names,sizes)
+        chart = plot_to_img(fig)
+
+
 
     return render_template('AvsA.html',
                            form= form,
-                           raw_data_table = raw_data_table,
                            title = 'Query by the user',
                            year=datetime.now().year,
                            message='query input',
