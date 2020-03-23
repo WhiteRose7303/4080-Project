@@ -396,10 +396,10 @@ def AvsA():
         df = pd.read_csv(URL_4)
         name = form.name.data
         name2 = form.name2.data
-        Air1 = df[(df['Aircraft'] == name)]
-        Air2 = df[(df['Aircraft'] == name2)]
-        Air1 = df.groupby('Aircraft').size()
-        Air2 = df.groupby('Aircraft').size()
+        Air1 = df[(df['Aircraft'] == name)].size
+        Air2 = df[(df['Aircraft'] == name2)].size
+        #Air1 = df.groupby('Aircraft').size()
+        #Air2 = df.groupby('Aircraft').size()
         print("im here")    
         sizes = [Air1, Air2]
         names = [name,name2]
