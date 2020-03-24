@@ -2,6 +2,17 @@
 
 {% block content %}
 
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+    {% for message in messages %}
+<h3>{{ message[1] }}</h3>
+<br />
+    {% endfor %}
+{% endif %}
+{% endwith %}
+
+
+
 <form method=post>
     {{ form.csrf }}
     {{ form.csrf_token }}

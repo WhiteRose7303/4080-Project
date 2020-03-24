@@ -390,24 +390,39 @@ class QueryFormStructureFD(FlaskForm):
 @app.route('/AvsA' , methods = ['GET' , 'POST'])
 def AvsA():
     chart = None
+    name = None
+    name2 = None
     print("running from qurey()")
     form = QueryFormStructureFD(request.form)
     if (request.method == 'POST' ):
         df = pd.read_csv(URL_4)
         name = form.name.data
         name2 = form.name2.data
+        print(name)
+        print(name2)
+        if (name == name2):
+            flash("error")
+            name = None
+            name2 = None
+            
+        
         Air1 = df[(df['Aircraft'] == name)].size
         Air2 = df[(df['Aircraft'] == name2)].size
-        #Air1 = df.groupby('Aircraft').size()
-        #Air2 = df.groupby('Aircraft').size()
-        print("im here")    
-        sizes = [Air1, Air2]
-        names = [name,name2]
-        fig = plt.figure()
-        ax = fig.add_axes([0,0,1,1])
-        ax.bar(names,sizes)
-        chart = plot_to_img(fig)
+        if (Air1 == 0):
+            flash("your first aircraft dosn't have any events related to him")
+        if (Air2 ==0):
+            flash("your secconed aircraft dosn't have any events related to him")
+        if (Air1 == 0 )&(Air2 == 0):
+            flash("both your aircrafts have no events related to them please try agian")
+            return redirect(url_for('AvsA'))
+        if (name != None)&(name2 != None):
+            sizes = [Air1, Air2]
+            names = [name,name2]
+            fig = plt.figure()
+            plt.scatter(names , sizes)
+            chart = plot_to_img(fig)
 
+        
 
 
     return render_template('AvsA.html',
@@ -416,7 +431,7 @@ def AvsA():
                            year=datetime.now().year,
                            message='query input',
                            chart = chart ,
-                           height = "250" ,
+                           height = "500" ,
                            width = "750" 
                            )
 
