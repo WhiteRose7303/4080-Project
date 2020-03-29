@@ -68,6 +68,7 @@
     <Content Include="_4080_Project\static\Data\FleetData.csv" />
     <Content Include="_4080_Project\static\Data\top.csv" />
     <Content Include="_4080_Project\static\Data\users.csv" />
+    <Content Include="_4080_Project\static\Data\YDM.csv" />
     <Content Include="_4080_Project\static\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="_4080_Project\static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="_4080_Project\static\fonts\glyphicons-halflings-regular.ttf" />
@@ -120,6 +121,7 @@
     <Content Include="_4080_Project\templates\Soduku.html" />
     <Content Include="_4080_Project\templates\Rawd.html" />
     <Content Include="_4080_Project\templates\AvsA.html" />
+    <Content Include="_4080_Project\templates\YDM.html" />
     <Content Include="_4080_Project\templates\WhatFP.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
