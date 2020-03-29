@@ -82,6 +82,7 @@ URL_1, URL_2, URL_3, UURL_1, UURL_2, UURL_3 = URL()
 
 URL_4 = 'https://raw.githubusercontent.com/WhiteRose7303/Flask-Project-H_O/25/2/20/4080%20Project/_4080_Project/static/Data/database.csv'
 
+URL_5 = "https://raw.githubusercontent.com/WhiteRose7303/Flask-Project-H_O/25/2/20/4080%20Project/_4080_Project/static/Data/YDM.csv"
 from flask_bootstrap import Bootstrap
 bootstrap = Bootstrap(app)
 from  _4080_Project.Models.Forms import ExpandForm
@@ -435,3 +436,49 @@ def AvsA():
                            width = "750" 
                            )
 
+
+
+class QueryFormStructureyd(FlaskForm):
+    name = SelectField('Year? ', validators = [DataRequired()])
+    submit = SubmitField('Enter')
+
+
+@app.route('/YDM' , methods = ['GET' , 'POST'])
+def YDM():
+    df = pd.read_csv(URL_5)
+    mg = list(set(df['Incident Year']))
+    cmg = [x for x in mg if x == x]
+    m = list(zip(cmg , cmg))
+    form = QueryFormStructureyd(request.form)
+    form.name.choices = m 
+    chart = None
+    Y = None
+    print("running from qurey()")
+    if (request.method == 'POST' ):
+        df = pd.read_csv(URL_5)
+        Y = form.name.data
+        print(Y)
+        LOM = [1,2,3,4,5,6,7,8,9,10,11,12]
+        LOS = [1,1,1,1,1,1,1,1,1,1,1,1]
+        length = len(LOS) 
+        for i+1 in range(length):
+            df1 = df[(df['Incident Year'] == Y)&(df['Incident Month']== i)].size
+            LOS[i] = df1
+        
+        fig = plt.figure()
+        ax = fig.add_axes([0,0,1,1])
+        ax.bar(LOM,LOS)
+        ax.set_ylabel('Frequency')
+        ax.set_xticklabels(LOM)
+        chart = plot_to_img(fig)
+
+
+    return render_template('YDM.html',
+                           form= form,
+                           title = 'Query by the user',
+                           year=datetime.now().year,
+                           message='query input',
+                           chart = chart ,
+                           height = "2000" ,
+                           width = "1500" 
+                           )

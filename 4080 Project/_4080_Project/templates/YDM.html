@@ -1,11 +1,23 @@
-<!DOCTYPE html>
+﻿{% extends "layout.html" %}
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
+{% block content %}
 
-</body>
-</html>
+<form method=post>
+    {{ form.csrf }}
+    {{ form.csrf_token }}
+    <table>
+        <tr>
+            <td class="input text"> {{ form.name.label }}</td>
+            <td>                    {{ form.name }}      </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="input submit"> <input type="submit" value="Check?" /></td>
+        </tr>
+    </table>
+</form>
+<p><h1>Plot: </h1></p>
+
+<img src={{ chart }} class="img-thumbnail" alt="plot" height={{height}} width={{ width }}>
+
+    {% endblock %}
