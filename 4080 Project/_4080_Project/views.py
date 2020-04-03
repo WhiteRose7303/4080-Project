@@ -456,20 +456,16 @@ def YDM():
     print("running from qurey()")
     if (request.method == 'POST' ):
         df = pd.read_csv(URL_5)
-        Y = form.name.data
+        Y = int(form.name.data)
         print(Y)
-        LOM = [1,2,3,4,5,6,7,8,9,10,11,12]
-        LOS = [1,1,1,1,1,1,1,1,1,1,1,1]
-        length = len(LOS) 
-        for i+1 in range(length):
-            df1 = df[(df['Incident Year'] == Y)&(df['Incident Month']== i)].size
-            LOS[i] = df1
+        df1 = df[(df['Incident Year'] == Y)]
+        x = df1.groupby('Incident Month').size()
+        
+        
         
         fig = plt.figure()
-        ax = fig.add_axes([0,0,1,1])
-        ax.bar(LOM,LOS)
-        ax.set_ylabel('Frequency')
-        ax.set_xticklabels(LOM)
+        ax = fig.add_subplot(111)
+        x.plot(ax = ax, kind = 'bar')
         chart = plot_to_img(fig)
 
 
