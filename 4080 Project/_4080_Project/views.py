@@ -62,6 +62,7 @@ def Imports():
     from _4080_Project.Models.LocalDatabaseRoutines import create_LocalDatabaseServiceRoutines
     return BooleanField, Counter, DataRequired, DateField, Figure, FigureCanvas, Flask, FlaskForm, Form, LoginFormStructure, PasswordField, QueryFormStructure, SelectField, StringField, SubmitField, TextAreaField, TextField, UserRegistrationFormStructure, ValidationError, app, base64, create_LocalDatabaseServiceRoutines, datetime, flash, io, json, make_response, np, os, pd, plt, redirect, render_template, request, requests, session, url_for, validators
 
+
 BooleanField, Counter, DataRequired, DateField, Figure, FigureCanvas, Flask, FlaskForm, Form, LoginFormStructure, PasswordField, QueryFormStructure, SelectField, StringField, SubmitField, TextAreaField, TextField, UserRegistrationFormStructure, ValidationError, app, base64, create_LocalDatabaseServiceRoutines, datetime, flash, io, json, make_response, np, os, pd, plt, redirect, render_template, request, requests, session, url_for, validators = Imports()
 
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
@@ -119,11 +120,23 @@ db_Functions = create_LocalDatabaseServiceRoutines()
 @app.route('/home')
 def home():
     """Renders the home page."""
+    return redirect(url_for('Under'))
     return render_template(
         'index.html',
         title='Home Page',
         year=datetime.now().year,
     )
+
+@app.route('/UnderCon')
+def Under():
+    """Renders the contact page."""
+    return render_template(
+        'UnderCon.html',
+        title='Maitn',
+        year=datetime.now().year,
+        message='I would love to hear your feedback'
+    )
+
 #add
 @app.route('/contact')
 def contact():
