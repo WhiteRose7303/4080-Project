@@ -120,7 +120,7 @@ db_Functions = create_LocalDatabaseServiceRoutines()
 @app.route('/home')
 def home():
     """Renders the home page."""
-    return redirect(url_for('Under'))
+    #return redirect(url_for('Under'))
     return render_template(
         'index.html',
         title='Home Page',

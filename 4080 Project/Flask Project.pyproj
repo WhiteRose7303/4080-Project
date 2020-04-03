@@ -73,6 +73,7 @@
     <Content Include="_4080_Project\static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="_4080_Project\static\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="_4080_Project\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="_4080_Project\static\IMGS\gloomap_986ed142.png" />
     <Content Include="_4080_Project\static\IMGS\Hadar Datasince.png" />
     <Content Include="_4080_Project\static\IMGS\plot.png" />
     <Content Include="_4080_Project\static\IMGS\TOP.svg" />
