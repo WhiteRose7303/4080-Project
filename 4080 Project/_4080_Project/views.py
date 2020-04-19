@@ -84,6 +84,8 @@ URL_1, URL_2, URL_3, UURL_1, UURL_2, UURL_3 = URL()
 URL_4 = 'https://raw.githubusercontent.com/WhiteRose7303/Flask-Project-H_O/25/2/20/4080%20Project/_4080_Project/static/Data/database.csv'
 
 URL_5 = "https://raw.githubusercontent.com/WhiteRose7303/Flask-Project-H_O/25/2/20/4080%20Project/_4080_Project/static/Data/YDM.csv"
+
+URL_6 = "https://raw.githubusercontent.com/WhiteRose7303/Flask-Project-H_O/25/2/20/4080%20Project/_4080_Project/static/Data/Full.csv"
 from flask_bootstrap import Bootstrap
 bootstrap = Bootstrap(app)
 from  _4080_Project.Models.Forms import ExpandForm
@@ -227,9 +229,12 @@ def rawd():
 
 @app.route('/RawData')
 def RawData():
-
+    df = pd.read_csv(URL_6)
+    dd = df.head()
+    ds = dd.to_html()
     return render_template(
         'RawData.html',
+        ds = ds,
         title='RawData',
         year=datetime.now().year,
       
