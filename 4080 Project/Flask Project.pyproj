@@ -66,6 +66,7 @@
     <Content Include="_4080_Project\static\Data\databaseC.csv" />
     <Content Include="_4080_Project\static\Data\databaseM.csv" />
     <Content Include="_4080_Project\static\Data\FleetData.csv" />
+    <Content Include="_4080_Project\static\Data\Full.csv" />
     <Content Include="_4080_Project\static\Data\top.csv" />
     <Content Include="_4080_Project\static\Data\users.csv" />
     <Content Include="_4080_Project\static\Data\YDM.csv" />
