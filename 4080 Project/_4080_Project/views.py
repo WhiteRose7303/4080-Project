@@ -103,7 +103,7 @@ def plot_to_img(fig):
 
             
                
-#chheck
+
 #print("Push Pull or Run?")
 #input = input("choose...")
 #if (input == "push"):
