@@ -24,15 +24,16 @@ class LocalDatabaseServiceRoutines(object):
         self.name = 'Data base service routines'
         self.index = {}
         #'/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/users.csv'
-        self.UsersDataFile = pd.read_csv(USER)
-        #self.UsersDataFile = path.join(path.dirname(__file__), '/home/HadarOva5384/4080-Project/4080 Project/_4080_Project/static/Data/users.csv')
+        
+        self.UsersDataFile = path.join(path.dirname(__file__), '../static/Data/users.csv')
+
 
 
 # -------------------------------------------------------
 # Read users data into a dataframe
 # -------------------------------------------------------
     def ReadCSVUsersDB(self):
-        df = pd.read_csv(USER)
+        df = pd.read_csv(self.UsersDataFile)
         return df
 
     #read alowd
@@ -61,12 +62,16 @@ class LocalDatabaseServiceRoutines(object):
     def IsLoginGood(self, UserName, Password):
         # Load the database of users
         df = self.ReadCSVUsersDB()
+        print(df)
         df=df.reset_index()
+        print(df)
         selection = [UserName]
+        print(selection)
         df = df[pd.DataFrame(df.username.tolist()).isin(selection).any(1)]
+        print(df)
 
         df = df.set_index('password')
-        
+        print(df)
         
         return (Password in df.index.values)
   
