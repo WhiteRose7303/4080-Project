@@ -117,7 +117,7 @@ def plot_to_img(fig):
 app.config['SECRET_KEY'] = 'The first argument to the field'
 db_Functions = create_LocalDatabaseServiceRoutines() 
 
-
+#renders home
 @app.route('/')
 @app.route('/home')
 def home():
@@ -128,7 +128,7 @@ def home():
         title='Home Page',
         year=datetime.now().year,
     )
-
+#Not in Service for debug purpesus renders an under con page
 @app.route('/UnderCon')
 def Under():
     """Renders the contact page."""
@@ -139,7 +139,7 @@ def Under():
         message='I would love to hear your feedback'
     )
 
-#add
+#Contact Page
 @app.route('/contact')
 def contact():
     """Renders the contact page."""
@@ -150,6 +150,7 @@ def contact():
         message='I would love to hear your feedback'
     )
 
+#about page
 @app.route('/about')
 def about():
     """Renders the about page."""
@@ -159,7 +160,7 @@ def about():
         year=datetime.now().year,
         message='Your application description page.'
     )
-
+#gallrey
 @app.route('/Photoalbum')
 def Photoalbum():
     """Renders the contact page."""
@@ -168,7 +169,7 @@ def Photoalbum():
         title='Photoalbum',
         year=datetime.now().year,
     )
-
+#pravicy policy
 @app.route('/Privacy')
 def Privacy():
     """Renders the contact page."""
@@ -177,7 +178,7 @@ def Privacy():
         title='Privacy',
         year=datetime.now().year,
     )
-
+#site map
 @app.route('/SiteMap')
 def SiteMap():
     """Renders the contact page."""
@@ -187,7 +188,7 @@ def SiteMap():
         year=datetime.now().year,
     )
 
-
+#renders the companey vs companey
 @app.route('/Fleet')
 def Fleet():
     
@@ -204,7 +205,7 @@ def Fleet():
         notsafe = notsafe
     )
 
-
+#login and rejister
 @app.route('/Account')
 def Account():
     return render_template(
@@ -214,7 +215,7 @@ def Account():
         
     )
 
-
+#The data in html form
 @app.route('/Rawd')
 def rawd():
     rawdata_f = pd.read_csv(URL_3)
@@ -226,7 +227,7 @@ def rawd():
         rawf = rawf
         
     )
-
+#anylized data page
 @app.route('/RawData')
 def RawData():
     df = pd.read_csv(URL_6)
@@ -240,7 +241,7 @@ def RawData():
       
         
     )
-
+#sudoko page
 @app.route('/Soduku')
 def Soduku():
     return render_template(
@@ -405,7 +406,7 @@ class QueryFormStructureFD(FlaskForm):
     submit = SubmitField('Enter')
 
 
-
+#query aircart vs aircraft
 @app.route('/AvsA' , methods = ['GET' , 'POST'])
 def AvsA():
     chart = None
@@ -460,7 +461,7 @@ class QueryFormStructureyd(FlaskForm):
     name = SelectField('Year? ', validators = [DataRequired()])
     submit = SubmitField('Enter')
 
-
+#qurey select by year
 @app.route('/YDM' , methods = ['GET' , 'POST'])
 def YDM():
     df = pd.read_csv(URL_5)
